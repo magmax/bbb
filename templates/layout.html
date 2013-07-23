@@ -1,0 +1,120 @@
+{%- block doctype -%}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% endblock %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    {% block head %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% if metatags %}
+      {{ metatags }}
+    {% endif %}
+    {% if refresh %}
+      <meta http-equiv="refresh" content="{{ refresh|e }}"/>
+    {% endif %}
+    <title>{{ pageTitle|e }}</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="{{ stylesheet }}" type="text/css" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ path_to_root }}rss">
+    <link rel="shortcut icon" href="{{ path_to_root }}favicon.ico">
+    {% endblock %}
+  </head>
+  <body>
+    {% block header -%}
+		<div class="navbar navbar-static-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a href="{{ path_to_root or '.' }}" class="brand">{{ title }}</a></li>
+					<ul class="nav nav-list">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Views<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="{{ path_to_root }}waterfall">Waterfall</a></li>
+								<li><a href="{{ path_to_root }}grid">Grid</a></li>
+								<li><a href="{{ path_to_root }}tgrid">T-Grid</a></li>
+								<li><a href="{{ path_to_root }}console">Console</a></li>
+							</ul>
+						</li>
+            <li><a href="{{ path_to_root }}builders">Builders</a></li>
+            <li><a href="{{ path_to_root }}one_line_per_build">Recent Builds</a></li>
+            <li><a href="{{ path_to_root }}buildslaves">Slaves</a></li>
+            <li><a href="{{ path_to_root }}changes">Changesources</a></li>
+            {% if authz.advertiseAction('showUsersPage', request) %}
+              <li><a href="{{ path_to_root }}users">Users</a></li>
+            {% endif %}
+
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">About<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="{{ path_to_root }}json/help">API</a></li>
+								<li><a href="{{ path_to_root }}about">This Builbot</a></li>
+							</ul>
+						</li>
+
+					{% if authz.authenticated(request) %}
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">User<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>{{ authz.getUsernameHTML(request) }}</li>
+								<li><a href="{{ path_to_root }}logout">Logout</a></li>
+							</ul>
+						</li>
+					{% elif authz.useHttpHeader and authz.httpLoginUrl %}
+						<a href="{{ authz.httpLoginUrl }}">Login</a>
+					{% endif %}
+					</ul>
+					{% if not authz.authenticated(request) and not (authz.useHttpHeader and authz.httpLoginUrl) and authz.auth %}
+						<form method="post" name="login" action="{{ path_to_root }}login" class="form-inline pull-right">
+							<input type="text" name="username" size=10 class="input-mini" />
+							<input type="password" name="passwd" size=10 class="input-mini"/>
+							<input type="submit" value="login" />
+						</form>
+					{% endif %}
+			</div>
+		</div>
+		</div>
+    {% endblock %}
+
+    {%- block barecontent -%}
+    
+    {% if alert_msg != "" %}
+    <div class="alert">
+    {{ alert_msg }}
+    </div>
+    {% endif %}
+
+		<div class="container">
+			<div class="content">
+				{%- block content -%}
+				{%- endblock -%}
+			</div>
+		</div>
+		{%- endblock -%}
+
+		<footer>
+    {%- block footer -%}
+		<div class="navbar navbar-fixed-bottom">
+			<div class="navbar-inner">
+				<div class="container">
+					<span>
+						{% if title -%}
+						{%- if title_url -%}
+						<a href="{{ title_url }}" class="brand">{{ title }} project</a>
+						{%- else -%}
+						{{ title }} project
+						{%- endif -%}
+						{%- endif -%}
+					</span>
+					<span class="pull-right">
+						Page built: <b>{{ time }}</b> ({{ tz }})
+						<a href="http://buildbot.net/">by BuildBot ({{version}})</a>
+					<span>
+				</div>
+			</div>
+		</div>
+    {% endblock -%}
+		</footer>
+		<script src="/jquery.js"></script>
+		<script src="/bootstrap/js/bootstrap.js"></script>
+  </body>
+</html>
