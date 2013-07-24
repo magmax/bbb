@@ -4,10 +4,12 @@
 
 {% block content %}
 
-<h1>
-Builder <a href="{{ path_to_builder }}">{{ b.getBuilder().getName() }}</a>
-Build #{{ b.getNumber() }}
-</h1>
+<div class="page-header">
+  <h1>
+    Builder <a href="{{ path_to_builder }}">{{ b.getBuilder().getName() }}</a>
+    <small>Build #{{ b.getNumber() }}</small>
+  </h1>
+</div>
 
 <div class="column">
 
@@ -86,10 +88,10 @@ SourceStamps:
  # that doesn't take up quite so much vertical space
  #}
    
-<h2>BuildSlave:</h2>
+<h2>Build Slave:</h2>
   
 {% if slave_url %}  
-  <a href="{{ slave_url|e }}">{{ b.getSlavename()|e }}</a>
+  <a href="{{ slave_url|e }}" class="btn">{{ b.getSlavename()|e }}</a>
 {% else %}
   {{ b.getSlavename()|e }} 
 {% endif %}
