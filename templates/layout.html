@@ -19,9 +19,9 @@
     <link rel="shortcut icon" href="{{ path_to_root }}favicon.ico">
     {% endblock %}
   </head>
-  <body>
+  <body style="padding-top:40px">
     {% block header -%}
-		<div class="navbar navbar-static-top">
+		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
 					<a href="{{ path_to_root or '.' }}" class="brand">{{ title }}</a></li>
@@ -93,7 +93,7 @@
 
 		<footer>
     {%- block footer -%}
-		<div class="navbar navbar-fixed-bottom">
+		<div class="navbar navbar-static-bottom">
 			<div class="navbar-inner">
 				<div class="container">
 					<span>

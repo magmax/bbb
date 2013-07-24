@@ -87,10 +87,10 @@
     {% elif 'bool' in f.type%}
        <input type='checkbox' name='checkbox' value='{{f.fullName}}' {{default_props[sch.name+"."+f.fullName]}}>{{f.label}}</input>
     {% elif 'textarea' in f.type %}
-       <span class="label">{{f.label}}</span>
+       <label class="control-label">{{f.label}}</label>
        <textarea name='{{f.fullName}}' rows={{f.rows}} cols={{f.cols}}>{{default_props[sch.name+"."+f.fullName]}}</textarea>
     {% elif 'list' in f.type %}
-       <span class="label">{{f.label}}</span>
+       <label class="control-label">{{f.label}}</label>
        <span class="select">
        <select name='{{f.fullName}}' {{ f.multiple and "multiple" or ""}}>
          {% for c in f.choices %}
@@ -99,10 +99,12 @@
        </select>
        </span>
     {% elif 'nested' in f.type %}
-      {% if f.label %}<span class="label">{{f.label}}</span>{% endif %}
+       <fieldset>
+      {% if f.fullName %}<legend>{{f.fullName}}</legend>{% endif %}
       {% for subfield in f.fields %}
         {{ force_build_scheduler_parameter(subfield, authz, request, sch, default_props) }}
       {% endfor %}
+      </fieldset>
     {% endif %}
     </div>
   {% endif %}
@@ -127,11 +129,13 @@
   {% if not on_all %}
      {% for b in builders %}
        {% if b.name in sch.builderNames %}
-     <fieldset class="control-group">
+  <div class="well">
+     <fieldset>
        <legend>Builders</legend>
        <input type="checkbox" name="selected" value="{{ b.name }}"/>
        <a href="{{ b.link }}">{{ b.name|e }}</a>
      </fieldset>
+  </div>
        {% endif %}
      {% endfor %}
   {% endif %}
@@ -188,7 +192,7 @@
 {% endmacro %}
 
 {% macro rebuild_build(rebuild_url, authz, exactly, ss) %}
- <form method="post" action="{{ rebuild_url }}" class="command rebuild">
+ <form method="post" action="{{ rebuild_url }}" class="well form-horizontal">
 
     {% if exactly %}
       <p>This tree was built from a specific set of
@@ -212,7 +216,7 @@
      <p>To force a build, fill out the following fields and
         push the 'Force Build' button</p>
   {% endif %}
-   <div class="row">
+   <div class="">
      <span class="label">Reason for re-running build:</span>
      <input type='text' name='comments' />
    </div>
