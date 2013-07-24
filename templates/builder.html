@@ -6,7 +6,7 @@
 
 <h1>Builder {{ name }}</h1>
 
-<p>(<a href="{{ path_to_root }}waterfall?show={{ name }}">view in waterfall</a>)</p>
+<p><a href="{{ path_to_root }}waterfall?show={{ name }}" class="btn">view in waterfall</a></p>
 
 <div class="column">
 
@@ -14,7 +14,7 @@
   <h2>Current Builds:</h2>
   <ul>
   {% for b in current %}
-    <li><a href="{{ b.link }}">{{ b.num }}</a>
+    <li><a href="{{ b.link }}" class="btn btn-small">{{ b.num }}</a>
     {% if b.when %}
       ETA: {{ b.when_time }} [{{ b.when }}]
     {% endif %}

@@ -1,0 +1,64 @@
+{% macro build_line(b, include_builder=False) %}
+  <small>({{ b.time }})</small>
+  Rev: {{ b.rev|shortrev(b.rev_repo) }}
+  <span class="{{ b.class }}">{{ b.results }}</span>
+  {% if include_builder %}
+    <a href="{{ b.builderurl }}" class="btn">{{ b.builder_name }}</a>
+  {% endif %}
+  <a href="{{ b.buildurl }}" class="btn">#{{ b.buildnum }}</a> - 
+  {{ b.text|capitalize }}
+{% endmacro %}
+
+{% macro build_tr(b, include_builder=False, loop=None) %}
+  <tr>
+    <td>{{ b.time }}</td>
+    <td>{{ b.rev|shortrev(b.rev_repo) }}</td>
+    <td>
+      {% if b.class == 'failure' %}
+      <span class="label label-important">
+        <span class="icon icon-remove icon-white"></span>
+        {{ b.results }}
+      </span>
+      {% elif b.class == 'retry' %}
+      <span class="label label-warning">
+        <span class="icon icon-repeat icon-white"></span>
+        {{ b.results }}
+      </span>
+      {% else %}
+      <span class="label label-success">
+        <span class="icon icon-ok icon-white"></span>
+        {{ b.results }}
+      </span>
+      {% endif %}
+    </td>
+  {%- if include_builder %}
+    <td><a href="{{ b.builderurl }}" class="btn">{{ b.builder_name }}</a></td>
+  {% endif %}
+    <td><a href="{{ b.buildurl }}" class="btn btn-mini">#{{ b.buildnum }}</a></td> 
+    <td class="left">{{ b.text|capitalize }}</td>
+  </tr>
+{% endmacro %}
+
+{% macro build_table(builds, include_builder=False) %}
+{% if builds %}
+<table class="table table-striped table-condensed"> 
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Revision</th>
+      <th>Result</th>
+      {%- if include_builder %}   
+      <th>Builder</th>
+      {% endif %}
+      <th>Build #</th>
+      <th>Info</th>
+    </tr>
+  </thead>
+  {% for b in builds %}
+    {{ build_tr(b, include_builder, loop) }}
+  {% endfor %}
+</table>
+{% else %}
+  No matching builds found
+{% endif %}
+{% endmacro %}
