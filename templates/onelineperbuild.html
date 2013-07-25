@@ -3,7 +3,12 @@
 {% import 'forms.html' as forms %}
 
 {% block content %}
-<h1>Last {{ num_builds }} finished builds: {{ branches|join(', ')|e }}</h1>
+<div class="page-header">
+  <h1>
+    Last {{ num_builds }} finished builds:
+    <small> {{ branches|join(', ')|e }}</small>
+  </h1>
+</div>
 
 {% if builders %}
   <p>of builders: {{ builders|join(", ")|e }}</p>
