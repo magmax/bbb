@@ -99,7 +99,7 @@
        </select>
        </span>
     {% elif 'nested' in f.type %}
-       <fieldset>
+       <fieldset class="well">
       {% if f.fullName %}<legend>{{f.fullName}}</legend>{% endif %}
       {% for subfield in f.fields %}
         {{ force_build_scheduler_parameter(subfield, authz, request, sch, default_props) }}
@@ -127,17 +127,17 @@
   {% endif %}
  <form method="post" name="force_build" action="{{ force_url }}" class="well form-horizontal">
   {% if not on_all %}
+     <fieldset class="well">
+       <legend>Builders</legend>
      {% for b in builders %}
        {% if b.name in sch.builderNames %}
-  <div class="well">
-     <fieldset>
-       <legend>Builders</legend>
+			 <div class="control-group">
        <input type="checkbox" name="selected" value="{{ b.name }}"/>
        <a href="{{ b.link }}">{{ b.name|e }}</a>
-     </fieldset>
-  </div>
+			 </div>
        {% endif %}
      {% endfor %}
+     </fieldset>
   {% endif %}
 
   <input type='hidden' name='forcescheduler' value='{{sch.name}}' />
