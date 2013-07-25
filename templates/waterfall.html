@@ -3,30 +3,34 @@
 
 {% block content %}
 
-<div>
-  <h1 style="display: inline;">Waterfall</h1>
-  <a href="{{ help_url }}" class="btn pull-right"><span class="icon icon-info-sign"></span> waterfall help</a>
+<div class="page-header">
+  <h1>
+    Waterfall
+    <a href="{{ help_url }}" class="btn pull-right"><span class="icon icon-info-sign"></span> waterfall help</a>
+  </h1>
 </div>
 
-<table border="0" cellspacing="0">
+
+
+<table class="table table-condensed">
 
 <tr class="LastBuild">
   <td align="right" colspan="2" class="Project">
-   last build
+   Last build
   </td>
 
-{% for b in builders %}  
+{% for b in builders %}
   <td align="center" class="{{ b.top_class }}">
-    <a href="{{ b.url }}">{{ b.name }}</a><br/>
+    <a href="{{ b.url }}" class="btn btn-mini btn-inverse">{{ b.name }}</a><br/>
     {{ " ".join(b.top) }}
   </td>
 {% endfor %}
 </tr>
 
 <tr class="Activity">
-<td align="right" colspan="2">current activity</td>
+<td align="right" colspan="2">Current activity</td>
 
-{% for b in builders %}  
+{% for b in builders %}
   <td align="center" class="{{ b.status_class }}">
     {{ "<br/>".join(b.status) }}
   </td>
@@ -35,17 +39,17 @@
 
 <tr>
 <td align="center" class="Time">{{ tz }}</td>
-<td align="center" class="Change"><a href="{{ changes_url }}">changes</a></td>
+<td align="center" class="Change"><a href="{{ changes_url }}" class="btn btn-mini">changes</a></td>
 
 {% for b in builders %}
- <td align="center" class="Builder"><a href="{{ b.url }}">{{ b.name }}</a></td>
+ <td align="center" class="Builder"><a href="{{ b.url }}" class="btn btn-mini">{{ b.name }}</a></td>
 {% endfor %}
 </tr>
 
-{# waterfall contents goes here #}    
+{# waterfall contents goes here #}
 {% for i in range(gridlen) -%}
   <tr>
-  {% for strip in grid -%}        
+  {% for strip in grid -%}
     {%- if strip[i] -%}{{ box(**strip[i]) }}
     {%- elif no_bubble -%}{{ box() }}
     {%- endif -%}
@@ -64,7 +68,7 @@
 {% endif %}
 
 {% if no_reload_page %}
- <a href="{{ no_reload_page }}">Stop Reloading</a> 
+ <a href="{{ no_reload_page }}">Stop Reloading</a>
 {% endif %}
 </ul>
 
