@@ -1,5 +1,5 @@
-legend + .control-group {
-  margin-top: 0px;
+body {
+    padding-top: 60px;
 }
 
 legend {
@@ -16,6 +16,10 @@ fieldset {
             box-shadow:  0px 0px 0px 0px #000;
 }
 
+legend + .control-group {
+  margin-top: 0px;
+}
+
 .form-horizontal .control-group {
   margin-bottom: 10px;
 
@@ -26,9 +30,10 @@ fieldset {
     margin-top: 10px;
 }
 
-body {
-    padding-top: 60px;
+.table {
+    width: auto;
 }
+
 
 
 .alert {

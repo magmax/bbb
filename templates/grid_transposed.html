@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% import 'grid_macros.html' as grid with context %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>
+    Grid View (Transposed)
+    <a href="/grid" class="btn pull-right"><span class="icon icon-repeat"></span> Normal grid</a>
+  </h1>
+</div>
+
+<table class="table table-condensed table-bordered">
+
+<tr>
+  <thead>
+    <tr>
+      <th rowspan="2">Execution</th>
+      <th colspan="{{ builders|length }}" style="text-align:center;">Builders</th>
+    </tr>
+    <tr>
+      {% for builder in builders %}
+      {{ grid.builder_td(builder) }}
+      {% endfor %}
+    </tr>
+  </thead>
+
+{% for i in range %}
+ <tr>
+ {{ grid.stamp_td(stamps[i]) }}
+ {% for b in builder_builds %}
+   {{ grid.build_td(b[i]) }}
+ {% endfor %}
+ </tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
