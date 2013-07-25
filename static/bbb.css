@@ -1,0 +1,27 @@
+legend + .control-group {
+  margin-top: 0px;
+}
+
+legend {
+    border-style: none;
+    border-width: 0;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+}
+
+fieldset {
+    border: 2px groove threedface #444;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+.form-horizontal .control-group {
+  margin-bottom: 10px;
+
+}
+
+.well {
+    margin-bottom: 0px;
+    margin-top: 10px;
+}

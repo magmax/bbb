@@ -82,8 +82,8 @@
     {% if f and not f.hide and (f.fullName != "username" or not authz.authenticated(request)) %}
     <div class="control-group"{% if f.name %} id="force-{{sch.name}}-{{f.fullName}}"{% endif %}>
     {% if 'text' in f.type or 'int' in f.type %}
-       <label class="control-label">{{f.label}}</label>
-       <input type='text' size='{{f.size}}' name='{{f.fullName}}' value='{{default_props[sch.name+"."+f.fullName]}}' />
+       <label class="control-label" for="{{f.fullName}}">{{ f.name.capitalize() }}</label>
+       <input type='text' size='{{f.size}}' name='{{f.fullName}}' id='{{f.fullName}}' value='{{default_props[sch.name+"."+f.fullName]}}'/>
     {% elif 'bool' in f.type%}
        <input type='checkbox' name='checkbox' value='{{f.fullName}}' {{default_props[sch.name+"."+f.fullName]}}>{{f.label}}</input>
     {% elif 'textarea' in f.type %}
@@ -100,7 +100,7 @@
        </span>
     {% elif 'nested' in f.type %}
        <fieldset class="well">
-      {% if f.fullName %}<legend>{{f.fullName}}</legend>{% endif %}
+      {% if f.fullName %}<legend>{{ f.fullName.capitalize() }}</legend>{% endif %}
       {% for subfield in f.fields %}
         {{ force_build_scheduler_parameter(subfield, authz, request, sch, default_props) }}
       {% endfor %}
@@ -126,7 +126,7 @@
         push the 'Force Build' button</p>
   {% endif %}
  <form method="post" name="force_build" action="{{ force_url }}" class="well form-horizontal">
-  {% if not on_all %}
+  {% if not on_all and builders%}
      <fieldset class="well">
        <legend>Builders</legend>
      {% for b in builders %}
