@@ -3,24 +3,27 @@
 
 {% block content %}
 
-<h1>Welcome to the Buildbot
-{%- if title -%}
-  &nbsp;for the&nbsp;
-  {%- if title_url -%}
+<div class="page-header">
+  <h1>
+    Welcome to the Buildbot
+    {%- if title -%}
+    &nbsp;for the&nbsp;
+    {%- if title_url -%}
     <a href="{{ title_url }}">{{ title }}</a>
-  {%- else -%}
+    {%- else -%}
     {{ title }}
-  {%- endif -%}
-&nbsp;project
-{%- endif -%}
-!
-</h1>
+    {%- endif -%}
+    &nbsp;project
+    {%- endif -%}
+    !
+  </h1>
+</div>
 
 <div class="column">
 
-<ul>
+<ul class="unstyled">
   {% set item_class=cycler('alt', '') %}
-  
+
   <li class="{{ item_class.next() }}">The <a href="waterfall">Waterfall Display</a> will give you a
   time-oriented summary of recent buildbot activity. <a href="waterfall/help">Waterfall Help.</a></li>
 
@@ -53,8 +56,6 @@ Master is shutting down<br/>
 {{ forms.clean_shutdown(shutdown_url, authz) }}
 {%- endif -%}
 {%- endif -%}
-
-<p><i>This and other pages can be overridden and customized.</i></p>
 
 </div>
 
