@@ -2,33 +2,36 @@
 
 {% block content %}
 
-<h1>Buildslaves</h1>
+<div class="page-header">
+  <h1>
+    Slaves
+  </h1>
+</div>
 
-<div class="column">
-
-<table class="info">
-
-<tr>
-  <th>Name</th>
-  {%- if show_builder_column %}
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>Name</th>
+    {%- if show_builder_column %}
     <th>Builders</th>
-  {%- endif %}
-  <th>BuildBot</th>
-  <th>Admin</th>
-  <th>Last heard from</th>
-  <th>Connects/Hour</th>
-  <th>Status</th>
-</tr>
+    {%- endif %}
+    <th>BuildBot</th>
+    <th>Admin</th>
+    <th>Last heard from</th>
+    <th>Connects/Hour</th>
+    <th>Status</th>
+  </tr>
+</thead>
 
 {% for s in slaves %}
-  <tr class="{{ loop.cycle('alt','') }}">
+  <tr>
   <td><b><a href="{{ s.link }}">{{ s.name }}</a></b></td>
-  
+
   {%- if show_builder_column %}
     <td>
     {%- if s.builders %}
       {%- for b in s.builders %}
-        <a href="{{ b.link }}">{{ b.name }}</a>
+        <a href="{{ b.link }}" class="btn btn-mini btn-inverse">{{ b.name }}</a><br/>
       {%- endfor %}
     {%- else %}
       <span class="Warning">no builders</span>
@@ -53,22 +56,20 @@
     <td>
     {{ s.connectCount }}
     </td>
-        
+
   {% if s.connected %}
     {% if s.running_builds %}
-      <td class="building">Running {{ s.running_builds }} build(s)</td>
+      <td><p class="label label-warning">Running {{ s.running_builds }} build(s)</p></td>
     {% else %}
-      <td class="idle">Idle</td>
+      <td><p class="label">Idle</p></td>
     {% endif %}
-        
+
   {% else %}
-    <td class="offline">Not connected</td>
+    <td><p class="label">Not connected</label></td>
   {% endif %}
-  
+
   </tr>
 {% endfor %}
 </table>
 
-</div>
-  
 {% endblock %}
