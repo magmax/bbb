@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>
+    About this Buildbot
+  </h1>
+</div>
+
+<h2>Version Information</h2>
+<dl class="dl-horizontal">
+ <dt>Buildbot</dt>
+ <dd>{{ buildbot }}</dd>
+ <dt>Twisted</dt>
+ <dd>{{ twisted }}</dd>
+ <dt>Jinja</dt>
+ <dd>{{ jinja }}</dd>
+ <dt>Python</dt>
+ <dd>{{ python }}</dd>
+ <dt>Buildmaster platform</dt>
+ <dd>{{ platform }}</dd>
+
+</dl>
+
+<h2>Source code</h2>
+
+<p>Buildbot is a free software project, released under the terms of the
+<a href="http://www.gnu.org/licenses/gpl.html">GNU GPL</a>.</p>
+
+<p>Please visit the <a href="http://buildbot.net/">Buildbot Home Page</a> for
+more information, including documentation, bug reports, and source
+downloads.</p>
+
+
+{% endblock %}
