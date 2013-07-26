@@ -71,74 +71,83 @@ function checkMouseLeave(element, event) {
   }
 }
 
+function reload_page() {
+  name_value = document.getElementById('namebox').value
+  if (document.location.href.lastIndexOf('?') == -1)
+    document.location.href = document.location.href+ '?name=' + name_value;
+  else
+    document.location.href = document.location.href+ '&name=' + name_value;
+}
+
 // ]]> 
 </script>
 {% endblock %}
 
 {% block content %}
 
-<h1>Console View</h1> 
-
-<div align="center">
-  <table width="95%" class="Grid" border="0" cellspacing="0">
-    <tr>
-      <td width="33%" align="left" class="left_align">
-{% if categories|length > 1 %}
-        <br><b>Categories:</b> {% for c in categories %}{{ c.name|e }} {% endfor %}
-{% endif %}
-{% if codebase %}
-        <br><b>Codebase:</b> {{ codebase|e }}
-{% endif %}
-{% if repository %}
-        <br><b>Repository:</b> {{ repository|e }}
-{% endif %}
-{% if project %}
-        <br><b>Project:</b> {{ project|e }}
-{% endif %}
-{% if branch != ANYBRANCH %}
-        <br><b>Branch:</b> {{ branch|e }}
-{% endif %}
-      </td>
-      <td width="33%" align="center" class="center_align">
-        <div align="center">
-          <table class="info">
-            <tr>
-              <td>Legend:&nbsp;&nbsp;</td>
-              <td class='legend success' title='All tests passed'>Passed</td>
-              <td class='legend failure' title='There is a new failure. Take a look!'>Failed</td>
-              <td class='legend warnings' title='It was failing before, and it is still failing. Make sure you did not introduce new regressions'>Failed&nbsp;Again</td>
-              <td class='legend running' title='The tests are still running'>Running</td>
-              <td class='legend exception' title='Something went wrong with the test, there is no result'>Exception</td>
-              <td class='legend offline' title='The builder is offline, as there are no slaves connected to it'>Offline</td>
-              <td class='legend notstarted' title='No result yet.'>No&nbsp;data</td>
-            </tr>
-          </table>
-        </div>
-      </td>
-      <td width="33%" align="right" class="right_align">
-      <script type="text/javascript"> 
-// <![CDATA[
-          function reload_page() {
-            name_value = document.getElementById('namebox').value
-            if (document.location.href.lastIndexOf('?') == -1)
-              document.location.href = document.location.href+ '?name=' + name_value;
-            else
-              document.location.href = document.location.href+ '&name=' + name_value;
-          }
-// ]]> 
-        </script>
-        <form onsubmit='reload_page()'>
-          <input id='namebox' name='name' type='text' style='color:#999;'
-              onblur='this.value = this.value || this.defaultValue; this.style.color = "#999";'
-              onfocus='this.value=""; this.style.color = "#000";'
-              value='Personalized for...'/>
-          <input type='submit' value='Go'/>
-        </form>
-      </td>
-     </tr>
-  </table>
+<div class="page-header">
+  <h1>
+		Console View
+		<div class="push-right">
+			<small>
+			</small>
+		</div>
+  </h1>
 </div>
 
+<div class="container">
+	<div class="row">
+			<div class="span4 pull-right">
+				<form onsubmit='reload_page()' class="form form-inline">
+					<input id='namebox' name='name' type='text' placeholder="Personalized for..." class="input-medium search-query"/>
+					<input type='submit' value="Go" class="btn"/>
+				</form>
+			</div>
+	</div>
+	<div class="row">
+		<div class="span8">
+			<table class="table">
+				<tr>
+					<td width="33%" align="left" class="left_align">
+						{% if categories|length > 1 %}
+						<br><b>Categories:</b> {% for c in categories %}{{ c.name|e }} {% endfor %}
+						{% endif %}
+						{% if codebase %}
+						<br><b>Codebase:</b> {{ codebase|e }}
+						{% endif %}
+						{% if repository %}
+						<br><b>Repository:</b> {{ repository|e }}
+						{% endif %}
+						{% if project %}
+						<br><b>Project:</b> {{ project|e }}
+						{% endif %}
+						{% if branch != ANYBRANCH %}
+						<br><b>Branch:</b> {{ branch|e }}
+						{% endif %}
+					</td>
+					<td width="33%" align="center" class="center_align">
+						<div align="center">
+							<table class="info">
+								<tr>
+									<td>Legend:&nbsp;&nbsp;</td>
+									<td class='legend success' title='All tests passed'>Passed</td>
+									<td class='legend failure' title='There is a new failure. Take a look!'>Failed</td>
+									<td class='legend warnings' title='It was failing before, and it is still failing. Make sure you did not introduce new regressions'>Failed&nbsp;Again</td>
+									<td class='legend running' title='The tests are still running'>Running</td>
+									<td class='legend exception' title='Something went wrong with the test, there is no result'>Exception</td>
+									<td class='legend offline' title='The builder is offline, as there are no slaves connected to it'>Offline</td>
+									<td class='legend notstarted' title='No result yet.'>No&nbsp;data</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<td width="33%" align="right" class="right_align">
+					</td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
 <br/>
 
 {% set alt_class = cycler('', 'Alt') %}
