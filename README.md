@@ -65,24 +65,24 @@ And here you are some screenshots:
 ![Default Slaves][Default Slaves mini] ![BBB Slaves][BBB Slaves mini]
 
 
-[Default Waterfall mini]: http://magmax.org/images/default_waterfall_mini.png
-[Default Grid mini]:      http://magmax.org/images/default_grid_mini.png
-[Default TGrid mini]:     http://magmax.org/images/default_tgrid_mini.png
-[Default Builders mini]:  http://magmax.org/images/default_builders_mini.png
-[Default Slaves mini]:    http://magmax.org/images/default_slaves_mini.png
-[Default Waterfall]:      http://magmax.org/images/default_waterfall.png
-[Default Grid]:           http://magmax.org/images/default_grid.png
-[Default TGrid]:          http://magmax.org/images/default_tgrid.png
-[Default Builders]:       http://magmax.org/images/default_builders.png
-[Default Slaves]:         http://magmax.org/images/default_slaves.png
-[BBB Waterfall mini]:     http://magmax.org/images/default_waterfall_mini.png
-[BBB Grid mini]:          http://magmax.org/images/default_grid_mini.png
-[BBB TGrid mini]:         http://magmax.org/images/default_tgrid_mini.png
-[BBB Builders mini]:      http://magmax.org/images/default_builders_mini.png
-[BBB Slaves mini]:        http://magmax.org/images/default_slaves_mini.png
-[BBB Waterfall]:          http://magmax.org/images/default_waterfall.png
-[BBB Grid]:               http://magmax.org/images/default_grid.png
-[BBB TGrid]:              http://magmax.org/images/default_tgrid.png
-[BBB Builders]:           http://magmax.org/images/default_builders.png
-[BBB Slaves]:             http://magmax.org/images/default_slaves.png
+[Default Waterfall mini]: http://magmax.org/images/bbb/default_waterfall_mini.png
+[Default Grid mini]:      http://magmax.org/images/bbb/default_grid_mini.png
+[Default TGrid mini]:     http://magmax.org/images/bbb/default_tgrid_mini.png
+[Default Builders mini]:  http://magmax.org/images/bbb/default_builders_mini.png
+[Default Slaves mini]:    http://magmax.org/images/bbb/default_slaves_mini.png
+[Default Waterfall]:      http://magmax.org/images/bbb/default_waterfall.png
+[Default Grid]:           http://magmax.org/images/bbb/default_grid.png
+[Default TGrid]:          http://magmax.org/images/bbb/default_tgrid.png
+[Default Builders]:       http://magmax.org/images/bbb/default_builders.png
+[Default Slaves]:         http://magmax.org/images/bbb/default_slaves.png
+[BBB Waterfall mini]:     http://magmax.org/images/bbb/default_waterfall_mini.png
+[BBB Grid mini]:          http://magmax.org/images/bbb/default_grid_mini.png
+[BBB TGrid mini]:         http://magmax.org/images/bbb/default_tgrid_mini.png
+[BBB Builders mini]:      http://magmax.org/images/bbb/default_builders_mini.png
+[BBB Slaves mini]:        http://magmax.org/images/bbb/default_slaves_mini.png
+[BBB Waterfall]:          http://magmax.org/images/bbb/default_waterfall.png
+[BBB Grid]:               http://magmax.org/images/bbb/default_grid.png
+[BBB TGrid]:              http://magmax.org/images/bbb/default_tgrid.png
+[BBB Builders]:           http://magmax.org/images/bbb/default_builders.png
+[BBB Slaves]:             http://magmax.org/images/bbb/default_slaves.png
 
