@@ -75,14 +75,14 @@ And here you are some screenshots:
 [Default TGrid]:          http://magmax.org/images/bbb/default_tgrid.png
 [Default Builders]:       http://magmax.org/images/bbb/default_builders.png
 [Default Slaves]:         http://magmax.org/images/bbb/default_slaves.png
-[BBB Waterfall mini]:     http://magmax.org/images/bbb/default_waterfall_mini.png
-[BBB Grid mini]:          http://magmax.org/images/bbb/default_grid_mini.png
-[BBB TGrid mini]:         http://magmax.org/images/bbb/default_tgrid_mini.png
-[BBB Builders mini]:      http://magmax.org/images/bbb/default_builders_mini.png
-[BBB Slaves mini]:        http://magmax.org/images/bbb/default_slaves_mini.png
-[BBB Waterfall]:          http://magmax.org/images/bbb/default_waterfall.png
-[BBB Grid]:               http://magmax.org/images/bbb/default_grid.png
-[BBB TGrid]:              http://magmax.org/images/bbb/default_tgrid.png
-[BBB Builders]:           http://magmax.org/images/bbb/default_builders.png
-[BBB Slaves]:             http://magmax.org/images/bbb/default_slaves.png
+[BBB Waterfall mini]:     http://magmax.org/images/bbb/bbb_waterfall_mini.png
+[BBB Grid mini]:          http://magmax.org/images/bbb/bbb_grid_mini.png
+[BBB TGrid mini]:         http://magmax.org/images/bbb/bbb_tgrid_mini.png
+[BBB Builders mini]:      http://magmax.org/images/bbb/bbb_builders_mini.png
+[BBB Slaves mini]:        http://magmax.org/images/bbb/bbb_slaves_mini.png
+[BBB Waterfall]:          http://magmax.org/images/bbb/bbb_waterfall.png
+[BBB Grid]:               http://magmax.org/images/bbb/bbb_grid.png
+[BBB TGrid]:              http://magmax.org/images/bbb/bbb_tgrid.png
+[BBB Builders]:           http://magmax.org/images/bbb/bbb_builders.png
+[BBB Slaves]:             http://magmax.org/images/bbb/bbb_slaves.png
 
