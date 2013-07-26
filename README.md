@@ -8,9 +8,11 @@ Let's give Buildbot some style!
 
 BBB is a set of templates to be used with [BuildBot] 0.8.7 or newer. They use Twitter [Bootstrap] CSS and JavaScript improve the web interface.
 
+Yes, I know there are some plans to create new [BuildBot] templates using [Bootstrap] in revision 0.9, but now you can use them with 0.8 by using bbb.
+
 The information shown is basically the same than the default templates show (maybe a button more or something like that), but no new information is shown and no old information is hidden.
 
-I tried to add more information (like a dropdown menu with the builder names), but that required to modify the BB code itself, and it was out of the scope of this project.
+I tried to add more information (like a dropdown menu with the builder names), but that required to modify the [BuildBot] code itself, and it was out of the scope of this project.
 
 # Installation
 
