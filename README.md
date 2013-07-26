@@ -56,23 +56,23 @@ And here you are some screenshots:
 
 ![Default Waterfall mini] - ![BBB Waterfall mini]
 
-[Default Waterfall] - [BBB Waterfall]
+Full sized: [Default Waterfall] - [BBB Waterfall]
 
 ![Default Grid mini] - ![BBB Grid mini]
 
-[Default Grid] - [BBB Grid]
+Full sized: [Default Grid] - [BBB Grid]
 
 ![Default TGrid mini] - ![BBB TGrid mini]
 
-[Default TGrid] - [BBB TGrid]
+Full sized: [Default TGrid] - [BBB TGrid]
 
 ![Default Builders mini] - ![BBB Builders mini]
 
-[Default Builders] - [BBB Builders]
+Full sized: [Default Builders] - [BBB Builders]
 
 ![Default Slaves mini] - ![BBB Slaves mini]
 
-[Default Slaves] - [BBB Slaves]
+Full sized: [Default Slaves] - [BBB Slaves]
 
 
 [Default Waterfall mini]: http://magmax.org/images/bbb/default_waterfall_mini.png
