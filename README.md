@@ -52,6 +52,26 @@ Code (be careful, it may delete some of your files):
     ln -s $BBB_PATH/static $MASTER_PATH/public_html/bbb
 ```
 
+## The BuildBot way
+
+Another option is to configure [BuildBot] in order to retrieve the templates from their location, as it is explained in the [BuildBot Manual]:
+
+```python
+    import jinja2
+    myloaders = [
+        jinja2.FileSystemLoader("/my/bbb/path"),
+        ]
+    c['status'].append(html.WebStatus(
+        …,
+        jinja_loaders = myloaders,
+    ))
+```
+
+Remember to link the static files too!!!
+
+This option can be used mixed with the Git one :D
+
+
 # Screenshots
 
 And here you are some screenshots:
@@ -98,5 +118,7 @@ Full sized: [Default Slaves] - [BBB Slaves]
 [BBB Builders]:           http://magmax.org/images/bbb/bbb_builders.png
 [BBB Slaves]:             http://magmax.org/images/bbb/bbb_slaves.png
 
-[BuildBot]:     http://buildbot.net/ "BuildBot page"
-[Bootstrap]:    http://twitter.github.io/bootstrap/ "Twitter Bootstrap site"
+[BuildBot]:               http://buildbot.net/ "BuildBot page"
+[Bootstrap]:              http://twitter.github.io/bootstrap/ "Twitter Bootstrap site"
+[BuildBot Manual]:        http://docs.buildbot.net/0.8.7/manual/cfg-statustargets.html#configuration
+
