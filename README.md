@@ -1,12 +1,12 @@
 # BuildBot Bootstrap
 
-Bootstrap templates for BuildBot
+[Bootstrap] templates for [BuildBot]
 
 Let's give Buildbot some style!
 
 # What is BBB
 
-BBB is a set of templates to be used with BuildBot 0.8.7 or newer. They use Twitter Bootstrap CSS and JavaScript improve the web interface.
+BBB is a set of templates to be used with [BuildBot] 0.8.7 or newer. They use Twitter [Bootstrap] CSS and JavaScript improve the web interface.
 
 The information shown is basically the same than the default templates show (maybe a button more or something like that), but no new information is shown and no old information is hidden.
 
@@ -34,8 +34,8 @@ Code (be careful, it can override your templates):
 If you are using a Git repository and you do not think about modifying the templates, maybe this can be the best form to install BBB:
 
 1. Add the BBB repository as a module: `git module add https://magmax@github.com/magmax/bbb.git`
-1. In your BuildBot master directory, create a link "templates" to the "templates" directory in the BBB working copy.
-1. In your BuildBot master directory, create a link "public_html/bbb" to the "static" directory in the BBB working copy.
+1. In your [BuildBot] master directory, create a link "templates" to the "templates" directory in the BBB working copy.
+1. In your [BuildBot] master directory, create a link "public_html/bbb" to the "static" directory in the BBB working copy.
 1. Restart/Reconfigure the master.
 
 Code (be careful, it may delete some of your files):
@@ -86,3 +86,5 @@ And here you are some screenshots:
 [BBB Builders]:           http://magmax.org/images/bbb/bbb_builders.png
 [BBB Slaves]:             http://magmax.org/images/bbb/bbb_slaves.png
 
+[BuildBot]:     http://buildbot.net/ "BuildBot page"
+[Bootstrap]:    http://twitter.github.io/bootstrap/ "Twitter Bootstrap site"
