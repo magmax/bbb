@@ -32,7 +32,7 @@
       {% endif %}
     </td>
   {%- if include_builder %}
-    <td><a href="{{ b.builderurl }}" class="btn">{{ b.builder_name }}</a></td>
+    <td><a href="{{ b.builderurl }}" class="btn btn-mini btn-inverse">{{ b.builder_name }}</a></td>
   {% endif %}
     <td><a href="{{ b.buildurl }}" class="btn btn-mini">#{{ b.buildnum }}</a></td> 
     <td class="left">{{ b.text|capitalize }}</td>
