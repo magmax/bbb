@@ -54,15 +54,15 @@ Code (be careful, it may delete some of your files):
 
 And here you are some screenshots:
 
-![Default Waterfall][Default Waterfall mini] ![BBB Waterfall][BBB Waterfall mini]
+![Default Waterfall mini]  ![BBB Waterfall mini]  [Default Waterfall]  [BBB Waterfall]
 
-![Default Grid][Default Grid mini] ![BBB Grid][BBB Grid mini]
+![Default Grid mini]  ![BBB Grid mini]  [Default Grid]  [BBB Grid]
 
-![Default TGrid][Default TGrid mini] ![BBB TGrid][BBB Tgrid mini]
+![Default TGrid mini]  ![BBB TGrid mini]  [Default TGrid]  [BBB TGrid]
 
-![Default Builders][Default Builders mini] ![BBB Builders][BBB Builders mini]
+![Default Builders mini]  ![BBB Builders mini]  [Default Builders]  [BBB Builders]
 
-![Default Slaves][Default Slaves mini] ![BBB Slaves][BBB Slaves mini]
+![Default Slaves mini]  ![BBB Slaves mini]  [Default Slaves]  [BBB Slaves]
 
 
 [Default Waterfall mini]: http://magmax.org/images/bbb/default_waterfall_mini.png
