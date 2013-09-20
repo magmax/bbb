@@ -15,7 +15,10 @@
     <title>{{ pageTitle|e }}</title>
 
     <link rel="stylesheet" href="/bbb/bootstrap/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="/bbb/bbb.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+    <style>
+{% include 'bbb.css' %}
+    </style>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ path_to_root }}rss">
     <link rel="shortcut icon" href="{{ path_to_root }}favicon.ico">
     {% endblock %}

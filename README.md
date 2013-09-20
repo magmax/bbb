@@ -19,7 +19,6 @@ I tried to add more information (like a dropdown menu with the builder names), b
 ## The easy way
 
 1. Copy the "templates" directory content into the "templates" directory in your master installation
-1. Copy the "static" directory content into the "public_html/bbb" directory in your master installation
 1. Restart/reconfigure the master.
 
 Code (be careful, it can override your templates):
@@ -28,7 +27,6 @@ Code (be careful, it can override your templates):
     MASTER_PATH=.
     BBB_PATH=../bbb
     scp -r $BBB_PATH/templates/* $MASTER_PATH/templates
-    scp -r $BBB_PATH/static $MASTER_PATH/public_html
 ```
 
 ## The GIT way
@@ -37,7 +35,6 @@ If you are using a Git repository and you do not think about modifying the templ
 
 1. Add the BBB repository as a module: `git module add https://magmax@github.com/magmax/bbb.git`
 1. In your [BuildBot] master directory, create a link "templates" to the "templates" directory in the BBB working copy.
-1. In your [BuildBot] master directory, create a link "public_html/bbb" to the "static" directory in the BBB working copy.
 1. Restart/Reconfigure the master.
 
 Code (be careful, it may delete some of your files):
@@ -49,7 +46,6 @@ Code (be careful, it may delete some of your files):
     git update --init
     rm -rf $MASTER_PATH/templates
     ln -s $BBB_PATH/templates $MASTER_PATH/templates
-    ln -s $BBB_PATH/static $MASTER_PATH/public_html/bbb
 ```
 
 ## The BuildBot way
